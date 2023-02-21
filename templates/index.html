@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>California House Price Prediction</title>
+    </head>
+    <body>
+        <h1>California House Price Prediction</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <label for="MedInc">Median Income</label>
+            <input type="number" name="MedInc" id="MedInc" step="any"/>
+            <br/>
+            <label for="HouseAge">House Age</label>
+            <input type="number" name="HouseAge" id="HouseAge" step="any"/>
+            <br/>
+            <label for="AveRooms">Average Rooms</label>
+            <input type="number" name="AveRooms" id="AveRooms" step="any"/>
+            <br/>
+            <label for="AveBedrms">Average Bedrooms</label>
+            <input type="number" name="AveBedrms" id="AveBedrms" step="any"/>
+            <br/>
+            <label for="Population">Population</label>
+            <input type="number" name="Population" id="Population" step="any"/>
+            <br/>
+            <label for="AveOccup">Average Occupancy</label>
+            <input type="number" name="AveOccup" id="AveOccup" step="any"/>
+            <br/>
+            <label for="Latitude">Latitude</label>
+            <input type="number" name="Latitude" id="Latitude" step="any"/>
+            <br/>
+            <label for="Longitude">Longitude</label>
+            <input type="number" name="Longitude" id="Longitude" step="any"/>
+            <br/>
+            <input type="submit" value="Submit" />
+        </form>
+        <div>
+            {% if prediction %}
+                <h1> The prediction of house price is: ${{ prediction }} </h1>
+            {% endif %}
+        </div>
+    </body>
+</html>
